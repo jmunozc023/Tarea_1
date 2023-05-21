@@ -8,6 +8,25 @@ package tarea_1;
  *
  * @author josep
  */
-public class Ingeniero {
+public class Ingeniero extends Empleado{
+    private String telefono;
+
+    public Ingeniero(String telefono, int cedula, String ubicacion, String nombre) {
+        super(cedula, ubicacion, nombre);
+        this.telefono = telefono;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "telefono: " + telefono;
+    }
     
 }
