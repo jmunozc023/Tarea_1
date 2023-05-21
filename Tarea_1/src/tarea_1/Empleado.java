@@ -11,10 +11,12 @@ package tarea_1;
 public class Empleado {
     private int cedula;
     private String ubicacion;
+    private String nombre;
 
-    public Empleado(int cedula, String ubicacion) {
+    public Empleado(int cedula, String ubicacion, String nombre) {
         this.cedula = cedula;
         this.ubicacion = ubicacion;
+        this.nombre = nombre;
     }
 
     public int getCedula() {
@@ -32,5 +34,15 @@ public class Empleado {
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    protected String print() {
+        return  "Nombre: " + nombre+ ", cedula: " + cedula + ", ubicacion: " + ubicacion ;
+    }
 }
