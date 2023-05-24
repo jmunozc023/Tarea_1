@@ -6,7 +6,7 @@ package tarea_1;
 
 /**
  *
- * @author josep
+ * @author santi
  */
 public class Dependiente extends Empleado implements Atencion{
     private String descripcionPuesto;
