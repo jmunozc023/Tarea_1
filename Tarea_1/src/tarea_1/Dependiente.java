@@ -4,17 +4,22 @@
  */
 package tarea_1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author santi
  */
 public class Dependiente extends Empleado implements Atencion{
+    Scanner scanner= new Scanner(System.in);
     private String descripcionPuesto;
 
-    public Dependiente(String descripcionPuesto, int cedula, String ubicacion, String nombre) {
+    public Dependiente( String descripcionPuesto, int cedula, String ubicacion, String nombre) {
         super(cedula, ubicacion, nombre);
         this.descripcionPuesto = descripcionPuesto;
+
     }
+
 
     public String getDescripcionPuesto() {
         return descripcionPuesto;
@@ -33,7 +38,11 @@ public class Dependiente extends Empleado implements Atencion{
 
     @Override
     public void AsignaSalario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int cod=0;
+        float mon=0;
+        int cant=0;
+        Salario salario = new Salario(cod, mon, cant);
+        
     }
     
 }

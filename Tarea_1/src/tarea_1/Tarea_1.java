@@ -13,14 +13,16 @@ import java.util.Scanner;
 public class Tarea_1 {
 
     public static void main(String[] args) {
-        String Inge;
-        String depen;
-        String ub;
-        String tele;
-        int ced;
-        String desc;
+        String Inge="";
+        String depen= "";
+        String ub="";
+        String tele= "";
+        int ced=0;
+        String desc = "";
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
+        Dependiente dependiente = new Dependiente(desc, ced, ub, depen);
+        Ingeniero ingeniero = new Ingeniero(tele, ced, ub, Inge);
         int opcion;
 
         do {
@@ -39,19 +41,18 @@ public class Tarea_1 {
                     
                     System.out.println("Ingrese el nombre del dependiente: ");
                     depen= scanner.next();
+                    dependiente.setNombre(depen);
                     System.out.println("Ingrese la cedula del dependiente: ");
                     ced= scanner1.nextInt();
+                    dependiente.setCedula(ced);
                     System.out.println("Ingrese la descripcion del puesto: ");
                     desc= scanner.next();
+                    dependiente.setDescripcionPuesto(desc);
                     scanner.nextLine();
+                    dependiente.setUbicacion(ub);
                     System.out.println("Ingrese la ubicacion: ");
                     ub= scanner.nextLine();
-                    System.out.println("Un momento por favor...");
-                    Dependiente dependiente = new Dependiente(desc, ced, ub, depen);
-                    dependiente.setNombre(depen);
-                    dependiente.setCedula(ced);
-                    dependiente.setDescripcionPuesto(desc);
-                    dependiente.setUbicacion(ub);                    
+                    System.out.println("Un momento por favor...");   
                     System.out.println("Creando un dependiente...");
                     System.out.println("Nombre: "+dependiente.getNombre()+" Cedula: "+dependiente.getCedula()+" Descripcion del puesto: "+ dependiente.getDescripcionPuesto()+" Ubicacion: "+ dependiente.getUbicacion());
                     
@@ -60,19 +61,18 @@ public class Tarea_1 {
                     // Lógica para crear un ingeniero
                     System.out.println("Ingrese el nombre del Ingeniero: ");
                     Inge= scanner.next();
+                    ingeniero.setNombre(Inge);
                     System.out.println("Ingrese la cedula del Ingeniero: ");
                     ced= scanner1.nextInt();
+                    ingeniero.setCedula(ced);
                     System.out.println("Ingrese el telefono: ");
                     tele= scanner.next();
+                    ingeniero.setTelefono(tele);
                     scanner.nextLine();
                     System.out.println("Ingrese la ubicacion: ");
                     ub= scanner.nextLine();
-                    System.out.println("Un momento por favor...");
-                    Ingeniero ingeniero = new Ingeniero(tele, ced, ub, Inge);
-                    ingeniero.setNombre(Inge);
-                    ingeniero.setCedula(ced);
                     ingeniero.setUbicacion(ub);
-                    ingeniero.setTelefono(tele);
+                    System.out.println("Un momento por favor...");
                     System.out.println("Creando un ingeniero...");
                     System.out.println("Nombre: "+ingeniero.getNombre()+" Cedula: "+ingeniero.getCedula()+" Telefono: "+ ingeniero.getTelefono()+" Ubicacion: "+ ingeniero.getUbicacion());
                     break;
@@ -82,6 +82,7 @@ public class Tarea_1 {
                     break;
                 case 4:
                     // Lógica para recibir salario por dependiente
+                    dependiente.AsignaSalario();
                     System.out.println("Recibiendo salario por dependiente...");
                     break;
                 case 5:
